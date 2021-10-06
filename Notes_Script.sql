@@ -30,6 +30,7 @@ CREATE TABLE NOTES(
 	creation_date DATE NOT NULL,
 	last_modified_date DATE NOT NULL,
 	descriptions VARCHAR(500) NOT NULL,
+	can_deleted BIT NOT NULL,
 	PRIMARY KEY(notes_id)
 );
 
@@ -91,16 +92,16 @@ INSERT INTO CATEGORIES_NOTES(name_categories) VALUES('OTRAS');
 
 select * from CATEGORIES_NOTES;
 
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(1,1,'NOTA 1', curdate(), curdate(), 'ESTA ES LA NOTA 1');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(2,2,'NOTA 2', curdate(), curdate(), 'ESTA ES LA NOTA 2');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(3,3,'NOTA 3', curdate(), curdate(), 'ESTA ES LA NOTA 3');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(4,4,'NOTA 4', curdate(), curdate(), 'ESTA ES LA NOTA 4');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(5,5,'NOTA 5', curdate(), curdate(), 'ESTA ES LA NOTA 5');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(6,6,'NOTA 6', curdate(), curdate(), 'ESTA ES LA NOTA 6');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(7,7,'NOTA 7', curdate(), curdate(), 'ESTA ES LA NOTA 7');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(8,8,'NOTA 8', curdate(), curdate(), 'ESTA ES LA NOTA 8');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(9,9,'NOTA 9', curdate(), curdate(), 'ESTA ES LA NOTA 9');
-INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions) VALUES(10,10,'NOTA 10', curdate(), curdate(), 'ESTA ES LA NOTA 10');
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(1,1,'NOTA 1', curdate(), curdate(), 'ESTA ES LA NOTA 1', 1);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(2,2,'NOTA 2', curdate(), curdate(), 'ESTA ES LA NOTA 2', 0);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(3,3,'NOTA 3', curdate(), curdate(), 'ESTA ES LA NOTA 3', 1);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(4,4,'NOTA 4', curdate(), curdate(), 'ESTA ES LA NOTA 4', 0);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(5,5,'NOTA 5', curdate(), curdate(), 'ESTA ES LA NOTA 5', 1);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(6,6,'NOTA 6', curdate(), curdate(), 'ESTA ES LA NOTA 6', 0);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(7,7,'NOTA 7', curdate(), curdate(), 'ESTA ES LA NOTA 7', 1);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(8,8,'NOTA 8', curdate(), curdate(), 'ESTA ES LA NOTA 8', 0);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(9,9,'NOTA 9', curdate(), curdate(), 'ESTA ES LA NOTA 9', 1);
+INSERT INTO NOTES(users_id, categories_id, title, creation_date, last_modified_date, descriptions, can_deleted) VALUES(10,10,'NOTA 10', curdate(), curdate(), 'ESTA ES LA NOTA 10', 0);
 select * from NOTES;
 
 INSERT INTO ACTIONS(notes_id, users_id, create_action, date_action) VALUES(1,1,1,curdate());
